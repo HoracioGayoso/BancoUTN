@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BancoUTN</string>
+    <string name="textViewNombre">Nombre</string>
+    <string-array name="datos">
+        <item>Pesos</item>
+        <item>Dolares</item>
+        <item>Euros</item>
+        <item>Reales</item>
+        <item>Patacones</item>
+        <item>Australes</item>
+        <item>Bono/Fondo Buitre</item>
+    </string-array>
 </resources>
