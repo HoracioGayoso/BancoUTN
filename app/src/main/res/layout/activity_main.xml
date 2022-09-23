@@ -5,7 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:text="Construir plazo fijo"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iconoUTN"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/utn_logo" />
+
+            <TextView
+                android:id="@+id/textViewBancoUTN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Banco UTN Santa Fe"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Para constituir tu plazo fijo necesitamos que nos proveas algunos datos."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </TableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +75,7 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -48,7 +100,7 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editTextApellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -76,11 +128,26 @@
             android:textSize="18dp" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/spinnerMonedas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="7"
             android:gravity="fill_vertical" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSimular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Simular" />
+    </LinearLayout>
+
 </LinearLayout>
