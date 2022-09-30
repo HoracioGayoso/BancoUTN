@@ -6,10 +6,9 @@
         <item>Dolares</item>
         <item>Euros</item>
         <item>Reales</item>
-        <item>Patacones</item>
-        <item>Australes</item>
-        <item>Bono/Fondo Buitre</item>
     </string-array>
+    <string name="textViewTitulo">Constituir plazo fijo</string>
+    <string name="textViewDatos">Para constituir tu plazo fijo necesitamos que nos proveas algunos datos.</string>
     <string name="textViewTasaNominal">Tasa Nominal Anual</string>
     <string name="textViewTasaEfectiva">Tasa Efectiva Anual</string>
     <string name="textViewCapitalAInvertir">Capital a Invertir($)</string>

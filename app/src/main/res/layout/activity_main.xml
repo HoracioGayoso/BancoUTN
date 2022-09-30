@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:textAlignment="center"
+    android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
-        android:text="Construir plazo fijo"
-        android:textColor="#000000"
+        android:text="@string/textViewTitulo"
+        android:textColor="@color/labelColor"
         android:textSize="24sp" />
 
     <TableLayout
@@ -29,7 +30,8 @@
                 android:id="@+id/iconoUTN"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                />
+                android:padding="10dp"
+                app:srcCompat="@mipmap/utn_logo" />
 
             <TextView
                 android:id="@+id/textViewBancoUTN"
@@ -38,7 +40,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Banco UTN Santa Fe"
-                android:textColor="#000000"
+                android:textColor="@color/labelColor"
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -52,8 +54,9 @@
                 android:id="@+id/textViewDatos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Para constituir tu plazo fijo necesitamos que nos proveas algunos datos."
+                android:text="@string/textViewDatos"
                 android:textAlignment="center"
+                android:textColor="@color/labelColor"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -71,7 +74,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/textViewNombre"
-            android:textColor="@color/black"
+            android:textColor="@color/labelColor"
             android:textSize="18dp" />
 
         <EditText
@@ -96,7 +99,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Apellido"
-            android:textColor="@color/black"
+            android:textColor="@color/labelColor"
             android:textSize="18dp" />
 
         <EditText
@@ -124,14 +127,14 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Moneda"
-            android:textColor="@color/black"
+            android:textColor="@color/labelColor"
             android:textSize="18dp" />
 
         <Spinner
             android:id="@+id/spinnerMonedas"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="7"
+            android:layout_weight="5.5"
             android:gravity="fill_vertical" />
 
     </LinearLayout>
@@ -140,14 +143,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
         <Button
             android:id="@+id/buttonSimular"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Simular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <Button
+            android:id="@+id/buttonConstituir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CONSTITUIR" />
     </LinearLayout>
 
 </LinearLayout>

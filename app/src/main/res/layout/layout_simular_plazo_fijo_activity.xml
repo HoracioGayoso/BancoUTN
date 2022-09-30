@@ -162,14 +162,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="@string/textViewPlazo" />
+                android:text="@string/textViewPlazo"
+                android:textColor="@color/labelColor" />
 
             <TextView
                 android:id="@+id/textViewSimPlazoValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textColor="@color/labelColor" />
         </LinearLayout>
 
         <LinearLayout
@@ -181,15 +183,17 @@
                 android:id="@+id/textViewSimCapital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:text="@string/textViewCapital"
-                android:paddingLeft="10dp" />
+                android:textColor="@color/labelColor" />
 
             <TextView
                 android:id="@+id/textViewSimCapitalValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textColor="@color/labelColor" />
         </LinearLayout>
 
         <LinearLayout
@@ -201,15 +205,17 @@
                 android:id="@+id/textViewSimInteresesG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:text="@string/textViewInteresesG"
-                android:paddingLeft="10dp"/>
+                android:textColor="@color/labelColor" />
 
             <TextView
                 android:id="@+id/textViewSimInteresesGValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textColor="@color/labelColor" />
         </LinearLayout>
 
         <LinearLayout
@@ -221,15 +227,17 @@
                 android:id="@+id/textViewSimMontoTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:text="@string/textViewMontoTotal"
-                android:paddingLeft="10dp"/>
+                android:textColor="@color/labelColor" />
 
             <TextView
                 android:id="@+id/textViewSimMontoTotalValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textColor="@color/labelColor" />
         </LinearLayout>
 
         <LinearLayout
@@ -241,21 +249,34 @@
                 android:id="@+id/textViewSimMontoTotalAnual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:text="@string/textViewMontoTotalAnual"
-                android:paddingLeft="10dp"/>
+                android:textColor="@color/labelColor" />
 
             <TextView
                 android:id="@+id/textViewSimMontoTotalAnualValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                android:textColor="@color/labelColor" />
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonConfirmar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonConfirmar" />
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp">
+
+        <Button
+            android:id="@+id/buttonConfirmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buttonConfirmar" />
+    </LinearLayout>
 </LinearLayout>

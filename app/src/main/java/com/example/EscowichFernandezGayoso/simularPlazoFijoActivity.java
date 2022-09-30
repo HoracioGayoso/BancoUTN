@@ -1,6 +1,9 @@
 package com.example.EscowichFernandezGayoso;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +17,7 @@ import com.example.EscowichFernandezGayoso.databinding.LayoutSimularPlazoFijoAct
 public class simularPlazoFijoActivity extends AppCompatActivity {
     private LayoutSimularPlazoFijoActivityBinding binding;
     private float plazo = 0;
-    private String stringPlazo = plazo + "dias";
+    private String stringPlazo = (Integer.toString(0)) + " dias";
     private SeekBar seekBarPlazo;
     private TextView textViewPlazo;
     private EditText editTextTasaNominal, editTextTasaEfectiva, editTextCapital;
@@ -47,32 +50,24 @@ public class simularPlazoFijoActivity extends AppCompatActivity {
         textViewSimMontoTotalAnualValor = binding.textViewSimMontoTotalAnualValor;
 
         buttonConfirmar = binding.buttonConfirmar;
+        buttonConfirmar.setEnabled(false);
+        setearListeners(editTextTasaNominal,editTextTasaEfectiva,editTextCapital,seekBarPlazo);
+        setContentView(view);
 
-        seekBarPlazo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        buttonConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                plazo = seekBar.getProgress();
-                stringPlazo = (Integer.toString((int) plazo*30)) + "dias";
-                textViewPlazo.setText(stringPlazo);
-                textViewSimPlazoValor.setText(stringPlazo);
-                calcular();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
+            public void onClick(View view) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("Capital",editTextCapital.getText().toString());
+                resultIntent.putExtra("Plazo",String.valueOf(seekBarPlazo.getProgress()*30));
+                setResult(simularPlazoFijoActivity.RESULT_OK, resultIntent);
+                finish();
             }
         });
-        setContentView(view);
-        calcular();
+
     }
     protected void calcular(){
-        float Capital, TasaEfectiva, TasaNominal,interesesGanados,MontoTotal;
+        float Capital, TasaNominal,interesesGanados,MontoTotal,MontoTotalAnual;
         if(camposInvalidos()){
             buttonConfirmar.setEnabled(false);
             textViewSimCapitalValor.setText("0");
@@ -81,15 +76,16 @@ public class simularPlazoFijoActivity extends AppCompatActivity {
             textViewSimMontoTotalAnualValor.setText("0");
         }
         else{
-            System.out.println("Entro al if");
             Capital = Float.parseFloat(editTextCapital.getText().toString());
-            TasaEfectiva = Float.parseFloat(editTextTasaEfectiva.getText().toString());
-            interesesGanados = Capital *(TasaEfectiva/100)*(plazo/12);
+            TasaNominal = Float.parseFloat(editTextTasaNominal.getText().toString());
+            interesesGanados = Capital *(TasaNominal/100)*(plazo/12);
             MontoTotal = Capital + interesesGanados;
+            MontoTotalAnual = Capital + (Capital*(TasaNominal/100));
             textViewSimCapitalValor.setText(editTextCapital.getText());
             textViewSimInteresesGValor.setText(String.valueOf(interesesGanados));
             textViewSimMontoTotalValor.setText(String.valueOf(MontoTotal));
-            textViewSimMontoTotalAnualValor.setText(editTextCapital.getText());
+            textViewSimMontoTotalAnualValor.setText(String.valueOf(MontoTotalAnual));
+            buttonConfirmar.setEnabled(true);
         }
     }
     protected boolean camposInvalidos(){
@@ -101,5 +97,77 @@ public class simularPlazoFijoActivity extends AppCompatActivity {
         }
         else
         return false;
+    }
+    protected void setearListeners(EditText textNominal,EditText textEfectiva,EditText textCapital,SeekBar seekPlazoF){
+        textNominal.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                calcular();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        textEfectiva.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                calcular();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        textCapital.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                calcular();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        seekBarPlazo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                plazo = seekBar.getProgress();
+                stringPlazo = (Integer.toString((int) plazo*30)) + "dias";
+                textViewPlazo.setText(stringPlazo);
+                textViewSimPlazoValor.setText(stringPlazo);
+                calcular();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
