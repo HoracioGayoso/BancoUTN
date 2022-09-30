@@ -29,7 +29,7 @@
                 android:id="@+id/iconoUTN"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/utn_logo" />
+                />
 
             <TextView
                 android:id="@+id/textViewBancoUTN"

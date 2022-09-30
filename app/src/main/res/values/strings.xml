@@ -10,4 +10,17 @@
         <item>Australes</item>
         <item>Bono/Fondo Buitre</item>
     </string-array>
+    <string name="textViewTasaNominal">Tasa Nominal Anual</string>
+    <string name="textViewTasaEfectiva">Tasa Efectiva Anual</string>
+    <string name="textViewCapitalAInvertir">Capital a Invertir($)</string>
+    <string name="textViewPlazo">Plazo: </string>
+    <string name="textViewSimulador">Simulador de Plazo Fijo en Pesos:</string>
+    <string name="textViewPlazoSim">Plazo: </string>
+    <string name="textViewCapital">Capital: </string>
+    <string name="textViewInteresesG">Intereses Ganados: </string>
+    <string name="textViewMontoTotal">Monto Total: $ </string>
+    <string name="textViewMontoTotalAnual">Monto Total Anual: $ </string>
+    <string name="buttonConfirmar">CONFIRMAR</string>
+
+
 </resources>
